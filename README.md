@@ -4,7 +4,7 @@ Certainly! Below is an example of what you might include in your `README.md` fil
 
 # Finance Portfolio Web App
 
-![Finance Portfolio](demo.png)
+![Finance Portfolio](screenshots/screenshot1.png)
 
 ## Overview
 This web application allows users to manage their stock investments, view their portfolio, buy and sell stocks, and track transaction history. Users can register, log in securely, and access real-time stock data through integration with a finance API.
