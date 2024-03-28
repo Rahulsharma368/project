@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quoted
+{% endblock %}
+
+{% block main %}
+    <ul class="list-unstyled">
+        <li><strong>Symbol:</strong> {{ quote["symbol"] }}</li>
+        <li><strong>Name:</strong> {{ quote["name"] }}</li>
+        <li><strong>Price:</strong> {{ quote["price"] | usd }}</li>
+    </ul>
+{% endblock %}

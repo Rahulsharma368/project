@@ -1,0 +1,113 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Portfolio
+{% endblock %}
+
+{% block main %}
+<html>
+  <head>
+    <title>C$50 Finance: Portfolio</title>
+    <style>
+        h1 {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        a {
+            color: #0080c0;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #eee;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        footer {
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer a {
+            text-decoration: none;
+        }
+    </style>
+  </head>
+  <body>
+    <h1>C$50 Finance: Portfolio</h1>
+    <p>
+      <a href="finance.cs50.net">C$50 Finance Quote Buy Sell History</a>
+    </p>
+    <p>
+      <strong>Bought!</strong>
+    </p>
+    <h2>Untitled</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Symbol</th>
+          <th>Shares</th>
+          <th>Price</th>
+          <th>Total Value</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for stock in stocks %}
+        <tr>
+          <td>{{ stock.symbol }}</td>
+          <td>{{ stock.shares }}</td>
+          <td>{{ stock.price }}</td>
+          <td>{{ stock.total }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="3">Cash Balance</td>
+          <td>{{ cash }}</td>
+        </tr>
+        <tr>
+          <td colspan="3">Total Portfolio Value</td>
+          <td>{{ total }}</td>
+        </tr>
+      </tfoot>
+    </table>
+    <p>
+      Data provided by Yahoo
+    </p>
+    <hr>
+    <p>
+      <a href="#">Validator</a>
+    </p>
+    <p>
+      <a href="/logout">Log Out</a>
+    </p>
+  </body>
+</html>
+{% endblock %}
